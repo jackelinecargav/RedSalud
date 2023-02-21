@@ -24,7 +24,6 @@ export class AppComponent {
   peticionExterna(): void {
     this.http.get('http://backasistenciasdev.us-east-2.elasticbeanstalk.com/api/red-salud/test')
       .subscribe(response => {
-        console.log('*********', response);
         this.data = response;
         this.contratante = this.data.data[0].contratante;
         this.plan = this.data.data[0].plan;

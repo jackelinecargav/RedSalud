@@ -19,9 +19,20 @@
   font-weight: bold;
   font-size: 25px;
 }
+.textHead{
+  font-size: 20px;
+  color: #636365;
+  padding-bottom: 20px;
+}
 .text{
   font-size: 20px;
   color: #636365;
+  border-bottom: dashed #a8d4ff;
+  padding-bottom: 20px;
+}
+.textDiv{
+  font-size: 15px;
+  color: #2271be;
 }
 .logo{
   font-size: 20px !important;
@@ -32,16 +43,19 @@
   font-size: 20px;
   color: #2271be;
 }
-.space{
-  font-size: 25px !important;
-  color: #a8d4ff;
-}
 .card{
   display: flex;
-  justify-content: space-around;  
+  justify-content: space-around; 
+  margin: 40px;
 }
 .content-card{
+  display: flex;
   background-color: #e6efff;
   border-radius: 10px;
-  width: 40%;
+  width: 45%;
+  padding: 15px;
+}
+.center{
+  display: flex;
+  justify-content: space-around;
 }
