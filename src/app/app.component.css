@@ -59,3 +59,49 @@
   display: flex;
   justify-content: space-around;
 }
+.progress{
+  display: flex;
+  flex-direction: column;
+  margin: 15% 0% 0% 0%;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .text{
+    font-size: 15px;
+    color: #636365;
+    border-bottom: dashed #a8d4ff;
+    padding-bottom: 12px;
+  }
+  .logo{
+    font-size: 15px !important;
+    color: #1aa483 !important;
+    font-weight: bold;
+  }
+  .subtitle{
+    font-size: 15px;
+    color: #2271be;
+  }
+  .center{
+    display: none;
+  }
+  .card{
+    display: flex;
+    justify-content: space-around; 
+    margin: 40px;
+  }
+  .content-card{
+    display: flex;
+    flex-direction: column;
+    background-color: #e6efff;
+    border-radius: 10px;
+    width: 80%;
+    padding: 15px;
+  }
+  .progress{
+    display: flex;
+    flex-direction: column;
+    margin: 50% 0% 0% 0%;
+    align-items: center;
+  }
+}

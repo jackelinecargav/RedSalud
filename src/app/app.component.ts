@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http'
 export class AppComponent {
 
   data: any;
+  flagResponse: boolean = true;
   contratante: any;
   plan: any;
   campa1: any;
@@ -22,13 +23,21 @@ export class AppComponent {
   }
   
   peticionExterna(): void {
+    try {
     this.http.get('http://backasistenciasdev.us-east-2.elasticbeanstalk.com/api/red-salud/test')
       .subscribe(response => {
         this.data = response;
-        this.contratante = this.data.data[0].contratante;
-        this.plan = this.data.data[0].plan;
-        this.campa1 = this.data.data[0].coberturas[0];
-        this.campa2 = this.data.data[0].coberturas[1];
+        this.flagResponse = false;
+        if (this.data.data != null || this.data.data != undefined) {
+          this.contratante = this.data.data[0].contratante;
+          this.plan = this.data.data[0].plan;
+          this.campa1 = this.data.data[0].coberturas[0];
+          this.campa2 = this.data.data[0].coberturas[1];
+        }
       });
+    } catch (err) {
+      console.log('err:', err);
+      this.data.data === null;
+    };
   }
 }

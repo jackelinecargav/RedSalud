@@ -1,27 +1,43 @@
-<div class="page">
-    <img class="head" src="https://raw.githubusercontent.com/jackelinecargav/RedSalud/c7452d9a70cb429f2cc27b1e62d681482fcd3651/src/assets/images/head.jpeg" width="70%">
-    <div class="body">
-      <span class="name">{{contratante}},</span>
-      <p class="text">En <b class="logo">Global RedSalud</b> premiamos tu preferencia y confianza, por
-        ello, por la compra de tu plan de salud cuentas con el siguiente
-        servicio gratuito: </p>
-      <p class="text"><b class="subtitle">Campaña: </b>{{plan}}</p>
-      <p class="text"><b class="subtitle">Descripción de la oferta del mes: </b>{{campa1}}</p>
-      <p class="text"><b class="subtitle">Validez de la campaña: </b>Desde el día siguiente de la afiliación
-        hasta 30 días posteriores.</p>
-      <div class="card">
-        <div class="content-card">
-          <img class="head" src="https://raw.githubusercontent.com/jackelinecargav/RedSalud/c7452d9a70cb429f2cc27b1e62d681482fcd3651/src/assets/images/user.png" width="80%" height="80%">
-          <div>
-            <span class="textDiv">Recuerda que este servicio es brindado por <b>Health Care Administration Red Salud S.A.C.</b> y para su uso,
-            deberás comunicarte al <b>WhatsApp 924843520 o a la central telefónica (01)445-3019 opción 2.</b><br>
-            <div class="center"><img src="https://raw.githubusercontent.com/jackelinecargav/RedSalud/c7452d9a70cb429f2cc27b1e62d681482fcd3651/src/assets/images/logo.png" width="40%" height="40%"></div>
-            </span>
+<div>
+  <div *ngIf="!flagResponse;else other_content">
+    <div class="page" *ngIf="data.data != null;else responde">
+      <img class="head" src="https://raw.githubusercontent.com/jackelinecargav/RedSalud/c7452d9a70cb429f2cc27b1e62d681482fcd3651/src/assets/images/head.jpeg" width="70%">
+      <div class="body">
+        <span class="name">{{contratante}},</span>
+        <p class="text">En <b class="logo">Global RedSalud</b> premiamos tu preferencia y confianza, por
+          ello, por la compra de tu plan de salud cuentas con el siguiente
+          servicio gratuito: </p>
+        <p class="text"><b class="subtitle">Campaña: </b>{{plan}}</p>
+        <p class="text"><b class="subtitle">Descripción de la oferta del mes: </b>{{campa1}}</p>
+        <p class="text"><b class="subtitle">Validez de la campaña: </b>Desde el día siguiente de la afiliación
+          hasta 30 días posteriores.</p>
+        <div class="card">
+          <div class="content-card">
+            <img class="head" src="https://raw.githubusercontent.com/jackelinecargav/RedSalud/c7452d9a70cb429f2cc27b1e62d681482fcd3651/src/assets/images/user.png" width="80%" height="80%">
+            <div>
+              <span class="textDiv">Recuerda que este servicio es brindado por <b>Health Care Administration Red Salud S.A.C.</b> y para su uso,
+              deberás comunicarte al <b>WhatsApp 924843520 o a la central telefónica (01)445-3019 opción 2.</b><br>
+              <div class="center"><img src="https://raw.githubusercontent.com/jackelinecargav/RedSalud/c7452d9a70cb429f2cc27b1e62d681482fcd3651/src/assets/images/logo.png" width="40%" height="40%"></div>
+              </span>
+            </div>
           </div>
         </div>
+        <b class="subtitle">Condiciones de la campaña</b>
+        <p class="textHead">{{campa2}}</p>
       </div>
-      <b class="subtitle">Condiciones de la campaña</b>
-      <p class="textHead">{{campa2}}</p>
+      <img class="foot" src="https://raw.githubusercontent.com/jackelinecargav/RedSalud/c7452d9a70cb429f2cc27b1e62d681482fcd3651/src/assets/images/footpage.jpeg" width="70%">
     </div>
-    <img class="foot" src="https://raw.githubusercontent.com/jackelinecargav/RedSalud/c7452d9a70cb429f2cc27b1e62d681482fcd3651/src/assets/images/footpage.jpeg" width="70%">
+    <ng-template #responde>
+      <div class="progress">
+        <img src="https://raw.githubusercontent.com/jackelinecargav/RedSalud/c7452d9a70cb429f2cc27b1e62d681482fcd3651/src/assets/images/logo.png" width="10%" height="10%">
+        <p class="textHead">No se encontro información, vuelva a intentarlo mas tarde.</p>
+      </div>
+    </ng-template>
+  </div>
+  <ng-template #other_content>
+    <div class="progress">
+      <img class="head" src="../assets/images/Spinner-3.gif" width="10%">
+      <span>Cargando</span>
+  </div>
+  </ng-template>
 </div>
